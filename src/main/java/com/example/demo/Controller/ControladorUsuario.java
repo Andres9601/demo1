@@ -8,21 +8,14 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.demo.Repository.ManejadorUsuario;
 import com.example.demo.Service.ServicioUsuario;
 
 
 @RestController
 public class ControladorUsuario {
-	
-	
-	@Autowired
-	ManejadorUsuario manejadorUsuario;
-	
-	@Autowired
-	ServicioUsuario servicioUsuario;
 
+	@Autowired(required = true)
+	ServicioUsuario servicioUsuario;
 	
 	@GetMapping(path= "/consultar", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> consultar() throws URISyntaxException{

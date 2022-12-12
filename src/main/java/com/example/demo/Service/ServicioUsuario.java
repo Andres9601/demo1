@@ -12,5 +12,5 @@ import com.example.demo.DTO.UsuarioDTO;
 public interface ServicioUsuario {
 
 	@Qualifier("ServicioUsuarioImpl")
-	public List<UsuarioDTO> consultar ();
+	public List<UsuarioDTO> consultar();
 }
