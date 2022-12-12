@@ -2,16 +2,21 @@ package com.example.demo.Entity;
 
 
 import java.io.Serializable;
-import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-
-
+@EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "USUARIO")
 public class Usuario implements Serializable {
@@ -52,106 +57,7 @@ public class Usuario implements Serializable {
 	
 	
 	
-	public Usuario(String idUsuario, String email, String nombre, Long telefono, Boolean activo) {
-		super();
-		this.idUsuario = idUsuario;
-		this.email = email;
-		this.nombre = nombre;
-		this.telefono = telefono;
-		this.activo = activo;
-	}
-
 	
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(activo, email, idUsuario, nombre, telefono);
-	}
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Usuario other = (Usuario) obj;
-		return Objects.equals(activo, other.activo) && Objects.equals(email, other.email)
-				&& Objects.equals(idUsuario, other.idUsuario) && Objects.equals(nombre, other.nombre)
-				&& Objects.equals(telefono, other.telefono);
-	}
-
-
-
-	public String getIdUsuario() {
-		return idUsuario;
-	}
-
-
-
-	public void setIdUsuario(String idUsuario) {
-		this.idUsuario = idUsuario;
-	}
-
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-
-	public String getNombre() {
-		return nombre;
-	}
-
-
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-
-	public Long getTelefono() {
-		return telefono;
-	}
-
-
-
-	public void setTelefono(Long telefono) {
-		this.telefono = telefono;
-	}
-
-
-
-	public Boolean getActivo() {
-		return activo;
-	}
-
-
-
-	public void setActivo(Boolean activo) {
-		this.activo = activo;
-	}
-
-
-
-	public Usuario() {
-		super();
-	}
-
-
-
 	public static boolean contieneAtributo(String atributo) {
 	boolean contiene = false;
 	for (final String atr : ATRIBUTOS_ENTIDAD_USUARIO) {
