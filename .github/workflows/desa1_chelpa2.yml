@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'chelpa2'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_311CE20AFACE40FEA31D2F6D17427904 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BA2154887DB1419984637A78DEFFC281 }}
           package: '*.jar'
