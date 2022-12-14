@@ -3,6 +3,7 @@ package com.project.ChelpaTex.ServiceImpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.ChelpaTex.DTO.RolDTO;
@@ -15,6 +16,7 @@ import com.project.ChelpaTex.Service.ServicioRol;
 @Service
 public class ServicioRolImpl implements ServicioRol{
 
+	@Autowired
 	ManejadorRol manejadorRol;
 	
 	@Override
