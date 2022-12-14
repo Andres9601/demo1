@@ -58,7 +58,7 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
 	public UsuarioDTO crear(UsuarioDTO usuarioDTO) {
 		Optional<Usuario> usuarioExiste = manejadorUsuario.findOneByEmail(usuarioDTO.getEmail());
 		try {
-			if(usuarioExiste.isPresent()) {
+			if(!usuarioExiste.isPresent()) {
 			Usuario usuario = new Usuario();
 			usuario.setIdUsuario(usuarioDTO.getIdUsuario());	
 			usuario.setEmail(usuarioDTO.getEmail());
@@ -82,7 +82,7 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
 		RolDTO rolDto = registroDTO.getRolDTO();
 		Optional<Usuario> usuarioExiste = manejadorUsuario.findOneByEmail(usuarioDto.getEmail());
 		try {
-			if(usuarioExiste.isPresent()) {
+			if(!usuarioExiste.isPresent()) {
 				this.crear(usuarioDto);
 				UsuarioRolPK usuRolPk = new UsuarioRolPK();
 				usuRolPk.setIdUsuario(usuarioDto.getIdUsuario());
