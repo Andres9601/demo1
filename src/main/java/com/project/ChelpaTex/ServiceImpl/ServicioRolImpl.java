@@ -1,0 +1,34 @@
+package com.project.ChelpaTex.ServiceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.project.ChelpaTex.DTO.RolDTO;
+import com.project.ChelpaTex.Entity.Rol;
+import com.project.ChelpaTex.Repository.ManejadorRol;
+import com.project.ChelpaTex.Service.ServicioRol;
+
+
+
+@Service
+public class ServicioRolImpl implements ServicioRol{
+
+	ManejadorRol manejadorRol;
+	
+	@Override
+	public List<RolDTO> consultar() {
+		List<Rol> rolesTemp = manejadorRol.findAll();
+		RolDTO rolDto = new RolDTO();
+		List<RolDTO> roles = new ArrayList<RolDTO>();
+		for (Rol rol : rolesTemp) {
+			rolDto.setIdRol(rol.getIdRol());
+			rolDto.setRol(rol.getRol());
+			rolDto.setActivo(rol.getActivo());
+			roles.add(rolDto);
+		}
+	return roles;
+	}
+
+}

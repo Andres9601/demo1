@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.project.ChelpaTex.DTO.RegistroDTO;
 import com.project.ChelpaTex.DTO.UsuarioDTO;
 import com.project.ChelpaTex.Entity.Usuario;
 import com.project.ChelpaTex.Repository.ManejadorUsuario;
@@ -39,5 +40,23 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
 			usuarios.add(usuarioDto);
 		}
 		return usuarios;
+	}
+
+
+
+
+	@Override
+	public UsuarioDTO crear(UsuarioDTO usuarioDTO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+	@Override
+	public RegistroDTO registrarUsuario(RegistroDTO registroDTO) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
