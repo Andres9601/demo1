@@ -38,9 +38,9 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
 	@Override
 	public List<UsuarioDTO> consultar() {
 		List<Usuario> usuariosTemp = manejadorUsuario.findAll();
-		UsuarioDTO usuarioDto = new UsuarioDTO();
 		List<UsuarioDTO> usuarios= new ArrayList<UsuarioDTO>();
 		for (Usuario usuarioTemp:usuariosTemp) {
+			UsuarioDTO usuarioDto = new UsuarioDTO();
 			usuarioDto.setIdUsuario(usuarioTemp.getIdUsuario());
 			usuarioDto.setEmail(usuarioTemp.getEmail());
 			usuarioDto.setNombre(usuarioTemp.getNombre());
