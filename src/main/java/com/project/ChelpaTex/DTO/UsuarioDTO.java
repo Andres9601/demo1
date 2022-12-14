@@ -1,4 +1,4 @@
-package com.example.demo.DTO;
+package com.project.ChelpaTex.DTO;
 
 import java.io.Serializable;
 import java.util.Objects;

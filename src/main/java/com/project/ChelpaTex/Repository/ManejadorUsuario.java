@@ -1,9 +1,9 @@
-package com.example.demo.Repository;
+package com.project.ChelpaTex.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.Entity.Usuario;
+import com.project.ChelpaTex.Entity.Usuario;
 
 
 @Repository

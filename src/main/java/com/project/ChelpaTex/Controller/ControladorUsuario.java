@@ -1,4 +1,4 @@
-package com.example.demo.Controller;
+package com.project.ChelpaTex.Controller;
 
 
 import java.net.URISyntaxException;
@@ -8,7 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.demo.Service.ServicioUsuario;
+
+import com.project.ChelpaTex.Service.ServicioUsuario;
 
 
 @RestController

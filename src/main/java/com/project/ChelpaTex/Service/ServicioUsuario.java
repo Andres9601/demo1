@@ -1,11 +1,11 @@
-package com.example.demo.Service;
+package com.project.ChelpaTex.Service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.DTO.UsuarioDTO;
+import com.project.ChelpaTex.DTO.UsuarioDTO;
 
 
 @Service

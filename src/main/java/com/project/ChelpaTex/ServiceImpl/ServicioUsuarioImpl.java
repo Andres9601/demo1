@@ -1,4 +1,4 @@
-package com.example.demo.ServiceImpl;
+package com.project.ChelpaTex.ServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,10 +7,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.DTO.UsuarioDTO;
-import com.example.demo.Entity.Usuario;
-import com.example.demo.Repository.ManejadorUsuario;
-import com.example.demo.Service.ServicioUsuario;
+import com.project.ChelpaTex.DTO.UsuarioDTO;
+import com.project.ChelpaTex.Entity.Usuario;
+import com.project.ChelpaTex.Repository.ManejadorUsuario;
+import com.project.ChelpaTex.Service.ServicioUsuario;
 
 
 

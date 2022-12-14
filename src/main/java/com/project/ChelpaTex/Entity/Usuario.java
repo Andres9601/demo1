@@ -1,4 +1,4 @@
-package com.example.demo.Entity;
+package com.project.ChelpaTex.Entity;
 
 
 import java.io.Serializable;
