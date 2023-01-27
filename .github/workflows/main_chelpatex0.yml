@@ -3,12 +3,14 @@
 
 name: Build and deploy JAR app to Azure Web App - chelpatex0
 
+    
 on:
   push:
     branches:
       - main
   workflow_dispatch:
 
+    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,6 +31,8 @@ jobs:
         with:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
+
+
 
   deploy:
     runs-on: ubuntu-latest
@@ -51,3 +55,11 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1AEF4147DAB44F80AFDEAAF1334C2D52 }}
           package: '*.jar'
+          
+      
+      - name: Add additional files to the deployment
+      
+        run: |
+          cp firebase.json firebase.json
+        env:
+          AZURE_WEBSITE_ROOT_PATH: /
