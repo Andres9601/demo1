@@ -60,6 +60,7 @@ jobs:
       - name: Add additional files to the deployment
       
         run: |
-          cp firebase.json firebase.json
+          cp firebase.json 
+          firebase.json
         env:
           AZURE_WEBSITE_ROOT_PATH: /
