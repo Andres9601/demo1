@@ -15,7 +15,7 @@ public class FirebaseInit {
 	
 	private static FirebaseOptions firebaseOptions;
 	private static FileInputStream serviceAccount; 
-	private static final String FIREBASE_CONFIG = "firebase.json";
+	private static final String FIREBASE_CONFIG = "./src/main/java/files/firebase.json";
 	
 	private static final Logger logger =  Logger.getLogger(FirebaseInit.class.getName());
 
