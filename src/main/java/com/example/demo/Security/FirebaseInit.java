@@ -1,6 +1,7 @@
 package com.example.demo.Security;
 
 import java.io.FileInputStream;
+import java.util.logging.Logger;
 
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,9 @@ public class FirebaseInit {
 	private static FirebaseOptions firebaseOptions;
 	private static FileInputStream serviceAccount; 
 	private static final String FIREBASE_CONFIG = "firebase.json";
+	
+	private static final Logger logger =  Logger.getLogger(FirebaseInit.class.getName());
+
 
 	public void inicializacion() throws FirebaseAuthException {
 		
@@ -25,7 +29,9 @@ public class FirebaseInit {
 			.setCredentials(GoogleCredentials.fromStream(serviceAccount))
 			.build();
 			FirebaseApp.initializeApp(firebaseOptions);
+			logger.info("inicializado");
 		} catch (Exception e){
+			logger.info("no inicializado");
 		}
 		
 		}

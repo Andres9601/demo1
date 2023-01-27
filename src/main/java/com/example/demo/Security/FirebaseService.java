@@ -1,5 +1,7 @@
 package com.example.demo.Security;
 
+import java.util.logging.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +18,12 @@ public class FirebaseService {
 	@Autowired
 	FirebaseInit firebaseInit;
 	
+	private static final Logger logger =  Logger.getLogger(FirebaseService.class.getName());
+
 	
 	public String createUsers(String email, String password) throws FirebaseAuthException {
+		
+
 		
 		firebaseInit.inicializacion();
 		CreateRequest request = new CreateRequest()
@@ -41,6 +47,7 @@ public class FirebaseService {
 		try {
 		firebaseInit.inicializacion();
 		FirebaseToken respuesta = FirebaseAuth.getInstance().verifyIdToken(idToken);
+		logger.info(respuesta.getUid());
 			return respuesta;
 		}catch (Exception e) {
 			return null;
