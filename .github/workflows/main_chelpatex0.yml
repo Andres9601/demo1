@@ -42,6 +42,15 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
+    
+      - name: Add additional files to the deployment
+      
+        run: |
+          cp firebase.json 
+          firebase.json
+        env:
+          AZURE_WEBSITE_ROOT_PATH: /
+    
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
@@ -57,10 +66,4 @@ jobs:
           package: '*.jar'
           
       
-      - name: Add additional files to the deployment
-      
-        run: |
-          cp firebase.json 
-          firebase.json
-        env:
-          AZURE_WEBSITE_ROOT_PATH: /
+     
