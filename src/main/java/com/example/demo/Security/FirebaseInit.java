@@ -3,7 +3,6 @@ package com.example.demo.Security;
 import java.io.FileInputStream;
 import java.util.logging.Logger;
 
-
 import org.springframework.stereotype.Service;
 
 import com.google.auth.oauth2.GoogleCredentials;
@@ -19,6 +18,7 @@ public class FirebaseInit {
 	private static FileInputStream serviceAccount; 
 	//private static final String FIREBASE_CONFIG = "firebase.json";
 	private static final String FIREBASE_CONFIG = System.getenv("FIREBASE_JSON");
+
 	
 	
 	
