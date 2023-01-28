@@ -3,9 +3,7 @@ package com.example.demo.Security;
 import java.io.FileInputStream;
 import java.util.logging.Logger;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.couchbase.CouchbaseProperties.Env;
-import org.springframework.core.env.Environment;
+
 import org.springframework.stereotype.Service;
 
 import com.google.auth.oauth2.GoogleCredentials;
@@ -15,9 +13,7 @@ import com.google.firebase.auth.FirebaseAuthException;
 
 @Service
 public class FirebaseInit {
-	
-	@Autowired
-	private Environment env;
+
 	
 	private static FirebaseOptions firebaseOptions;
 	private static FileInputStream serviceAccount; 
