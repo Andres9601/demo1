@@ -21,8 +21,8 @@ public class FirebaseInit {
 	
 	private static FirebaseOptions firebaseOptions;
 	private static FileInputStream serviceAccount; 
-	//private static final String FIREBASE_CONFIG = "firebase.json";
-	private static final String FIREBASE_CONFIG = System.getenv("FIREBASE_JSON");
+	private static final String FIREBASE_CONFIG = "firebase.json";
+	//private static final String FIREBASE_CONFIG = System.getenv("FIREBASE_JSON");
 	
 	
 	
