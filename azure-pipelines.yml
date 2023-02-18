@@ -44,9 +44,9 @@ stages:
       
     - task: CopyFiles@2
       inputs:
-        SourceFolder: '/firebase.json'
-        Contents: '**'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)/wwwroot'
+        SourceFolder: '$(Build.SourcesDirectory)'
+        Contents: 'firebase.json'
+        TargetFolder: '$(build.artifactstagingdirectory)/wwwroot'
     
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
