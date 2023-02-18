@@ -22,7 +22,7 @@ jobs:
           java-version: '8'
 
       - name : add firebase
-        run: cp firebase.json tmp/.
+        run: cp firebase.json /tmp
         
       - name: Copiar archivo de configuración a la carpeta de recursos
         run: mvn install:install-file -Dfile=/tmp/firebase.json -DgroupId=com.example -DartifactId=my-project -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true -DlocalRepositoryPath=.
