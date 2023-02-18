@@ -46,7 +46,7 @@ stages:
       inputs:
         SourceFolder: $(Build.SourcesDirectory)/firebase.json
         Contents: '**/target/*.?(json)'
-        TargetFolder: $(Build.ArtifactStagingDirectory)
+        TargetFolder: $(Build.ArtifactStagingDirectory)/wwwroot/
 
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
