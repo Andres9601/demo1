@@ -3,8 +3,7 @@ package com.example.demo.Security;
 import java.io.FileInputStream;
 import java.util.logging.Logger;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
+
 import org.springframework.stereotype.Service;
 
 import com.google.auth.oauth2.GoogleCredentials;
@@ -18,23 +17,11 @@ public class FirebaseInit {
 	
 	private static FirebaseOptions firebaseOptions;
 	private static FileInputStream serviceAccount; 
-	//private static final String FIREBASE_CONFIG = "firebase.json";
+	private static final String FIREBASE_CONFIG = "firebase.json";
 	//private static final String FIREBASE_CONFIG = System.getenv("FIREBASE_JSON");
 
 	
-	@Autowired
-	private Environment env;
 
-	public String configureFirebase(){
-	  String firebaseConfigJson = env.getProperty("FIREBASE_JSON");
-	  return firebaseConfigJson;
-	}
-
-
-
-
-	
-	
 	
 	private static final Logger logger =  Logger.getLogger(FirebaseInit.class.getName());
 
@@ -43,7 +30,7 @@ public class FirebaseInit {
 		
 		
 		try {
-			serviceAccount = new FileInputStream(configureFirebase());
+			serviceAccount = new FileInputStream(FIREBASE_CONFIG);
 			firebaseOptions = new FirebaseOptions.Builder()
 			.setCredentials(GoogleCredentials.fromStream(serviceAccount))
 			.build();
