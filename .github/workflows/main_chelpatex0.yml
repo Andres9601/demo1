@@ -21,15 +21,8 @@ jobs:
         with:
           java-version: '8'
 
-      - name : add firebase
-        run: cp firebase.json /tmp
-        
-      - name: Copiar archivo de configuración a la carpeta de recursos
-        run: mvn install:install-file -Dfile=/tmp/firebase.json -DgroupId=com.example -DartifactId=my-project -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true -DlocalRepositoryPath=.
-
-
       - name: Build with Maven
-        run: mvn clean package
+        run: mvn clean install
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
