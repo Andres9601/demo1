@@ -1,5 +1,6 @@
 package com.example.demo.Security;
 
+import java.io.IOException;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class FirebaseService {
 	private static final Logger logger =  Logger.getLogger(FirebaseService.class.getName());
 
 	
-	public String createUsers(String email, String password) throws FirebaseAuthException {
+	public String createUsers(String email, String password) throws FirebaseAuthException, IOException {
 		
 
 		
