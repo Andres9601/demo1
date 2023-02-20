@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuthException;
 public class FirebaseInit {
 
 	
-	//private static FirebaseOptions firebaseOptions;
+    private static FirebaseOptions firebaseOptions;
 	//private static FileInputStream serviceAccount; 
 	//private static final String FIREBASE_CONFIG = "./src/main/resources/firebase.json";
 	//private static final String FIREBASE_CONFIG = System.getenv("FIREBASE_JSON");
@@ -38,10 +38,10 @@ public class FirebaseInit {
 		ClassPathResource resource = new ClassPathResource("firebase.json");
 		InputStream inputStream = resource.getInputStream();
 		String json = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8);
-		FirebaseOptions options = new FirebaseOptions.Builder()
+		firebaseOptions = new FirebaseOptions.Builder()
 		    .setCredentials(GoogleCredentials.fromStream(new ByteArrayInputStream(json.getBytes())))
 		    .build();
-		FirebaseApp.initializeApp(options);
+		FirebaseApp.initializeApp(firebaseOptions);
 		
 		
 		/*try {
